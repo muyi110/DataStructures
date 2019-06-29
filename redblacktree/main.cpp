@@ -30,9 +30,9 @@ int main(int argc, char* argv[])
     print(rb.root());
     cout << endl;
     cout << "-------------------------红黑树删除操作-----------------------" << endl;
-    cout <<"search 50: " << (rb.search(49) ? "found" : "no found") << endl;
-    cout << "remove 50: " << endl; 
-    rb.remove(50);
+    cout <<"search 49: " << (rb.search(49) ? "found" : "no found") << endl;
+    cout << "remove 49: " << endl; 
+    rb.remove(49);
     cout << "root: " << rb.root()->data << endl;
     cout << "size: " << rb.size() << endl;
     cout << "root's height: " << rb.root()->height << endl;
