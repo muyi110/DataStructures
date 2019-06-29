@@ -30,7 +30,9 @@ template <typename T> void RedBlack<T>::solveDoubleRed(BinNodePosi(T) x)
             x->color = RB_BLACK;
         g->color = RB_RED;
         BinNodePosi(T) gg = g->parent;
-        BinNodePosi(T) r = FromParentTo(*g) = this->rotateAt(x); // 调整后子树的根节点
+        // 对于赋值操作，先求哪边是不确定的，特别是两边的变量有关联的时候（例如下面的g)
+        BinNodePosi(T) &fromParentTo = FromParentTo(*g);
+        BinNodePosi(T) r = fromParentTo = this->rotateAt(x); // 调整后子树的根节点
         r->parent = gg;
         // 以上是先染色后旋转，但是先旋转后染色效率更高
     }
